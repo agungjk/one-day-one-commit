@@ -1,10 +1,11 @@
 import 'react-native-gesture-handler';
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
+import IntroScreen from './src/screens/intro';
 import HomeScreen from './src/screens/home';
 
 const Stack = createStackNavigator();
@@ -18,16 +19,24 @@ function CustomNavigationBar() {
 }
 
 export default function App() {
+  const [isShowIntro, showIntro] = useState(true);
+
+  const onDone = () => {
+    showIntro(false);
+  }
+
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            header: CustomNavigationBar,
-          }}>
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>        
+        {isShowIntro ? <IntroScreen onDone={onDone} /> : (
+          <Stack.Navigator
+            initialRouteName="Home"
+            screenOptions={{
+              header: CustomNavigationBar,
+            }}>
+            <Stack.Screen name="Home" component={HomeScreen} />
+          </Stack.Navigator>        
+        )}
       </NavigationContainer>
     </PaperProvider>
   );
