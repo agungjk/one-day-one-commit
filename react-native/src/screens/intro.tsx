@@ -37,7 +37,7 @@ const slides = [
 const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
   const renderItem : React.FC<RenderItemProps> = ({ item }) => {
     return (
-      <View style={styles.slide}>
+      <View style={[styles.slide, { backgroundColor: item.backgroundColor }]}>
         <Text style={styles.title}>{item.title}</Text>
           <Image source={item.image} />
         <Text style={styles.text}>{item.text}</Text>
