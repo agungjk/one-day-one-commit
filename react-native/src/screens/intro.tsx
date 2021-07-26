@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 interface ScreenProps {
   onDone: () => void
@@ -15,21 +16,21 @@ const slides = [
     key: 'one',
     title: 'Title 1',
     text: 'Description.\nSay something cool',
-    // image: require('./assets/1.jpg'),
+    image: require('../../assets/no-image.png'),
     backgroundColor: '#59b2ab',
   },
   {
     key: 'two',
     title: 'Title 2',
     text: 'Other cool stuff',
-    // image: require('./assets/2.jpg'),
+    image: require('../../assets/no-image.png'),
     backgroundColor: '#febe29',
   },
   {
     key: 'three',
     title: 'Rocket guy',
     text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
-    // image: require('./assets/3.jpg'),
+    image: require('../../assets/no-image.png'),
     backgroundColor: '#22bcb5',
   }
 ];
@@ -39,7 +40,7 @@ const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
     return (
       <View style={[styles.slide, { backgroundColor: item.backgroundColor }]}>
         <Text style={styles.title}>{item.title}</Text>
-          <Image source={item.image} />
+          <Image source={item.image} style={styles.image} />
         <Text style={styles.text}>{item.text}</Text>
       </View>
     );
@@ -62,9 +63,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
   },
   image: {
-    width: 320,
-    height: 320,
-    marginVertical: 32,
+    width: wp('90%'),
+    height: hp('40%'),
   },
   text: {
     color: 'rgba(255, 255, 255, 0.8)',
