@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import IntroScreen from './src/screens/intro';
+import WelcomeScreen from './src/screens/welcome';
 import HomeScreen from './src/screens/home';
 
 const Stack = createStackNavigator();
@@ -18,25 +18,20 @@ function CustomNavigationBar() {
   );
 }
 
+const hideHeader = { headerShown: false };
+
 export default function App() {
-  const [isShowIntro, showIntro] = useState(true);
-
-  const onDone = () => {
-    showIntro(false);
-  }
-
   return (
     <PaperProvider>
       <NavigationContainer>
-        {isShowIntro ? <IntroScreen onDone={onDone} /> : (
-          <Stack.Navigator
-            initialRouteName="Home"
-            screenOptions={{
-              header: CustomNavigationBar,
-            }}>
-            <Stack.Screen name="Home" component={HomeScreen} />
-          </Stack.Navigator>        
-        )}
+        <Stack.Navigator
+          initialRouteName="Welcome"
+          screenOptions={{
+            header: CustomNavigationBar,
+          }}>
+          <Stack.Screen name="Welcome" component={WelcomeScreen} options={hideHeader} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
   );
