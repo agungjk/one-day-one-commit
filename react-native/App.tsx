@@ -5,8 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import WelcomeScreen from './src/screens/welcome';
-import HomeScreen from './src/screens/home';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Welcome1Screen from './src/screens/welcome/1';
+import Welcome2Screen from './src/screens/welcome/2';
+import Welcome3Screen from './src/screens/welcome/3';
+import TOCScreen from './src/screens/table-of-contents';
 
 const Stack = createStackNavigator();
 
@@ -22,18 +25,20 @@ const hideHeader = { headerShown: false };
 
 export default function App() {
   return (
-    <PaperProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Welcome"
-          screenOptions={{
-            header: CustomNavigationBar,
-          }}>
-          <Stack.Screen name="Welcome" component={WelcomeScreen} options={hideHeader} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+    <SafeAreaProvider>
+      <PaperProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Root"
+            screenOptions={hideHeader}>
+            <Stack.Screen name="Root" component={TOCScreen} />
+            <Stack.Screen name="Welcome1" component={Welcome1Screen} />
+            <Stack.Screen name="Welcome2" component={Welcome2Screen} />
+            <Stack.Screen name="Welcome3" component={Welcome3Screen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 }
 

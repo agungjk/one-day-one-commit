@@ -35,7 +35,7 @@ const slides = [
 const IntroScreen : React.FC<ScreenProps> = () => {
   const navigation = useNavigation();
 
-  const onDone = () => navigation.navigate('Home');
+  const onDone = () => navigation.goBack();
 
   const renderItem : React.FC<RenderItemProps> = ({ item }) => {
     return (

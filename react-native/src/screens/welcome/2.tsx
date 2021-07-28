@@ -1,8 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { View, Text, SafeAreaView, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Button } from 'react-native-paper';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 
 interface ScreenProps {
   onDone: () => void
@@ -37,7 +39,13 @@ const slides = [
 ];
 
 const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
+  const insets = useSafeAreaInsets();
+  const navigation = useNavigation();
   const [active, setActive] = useState(0);
+
+  const goBack = () => {
+    navigation.goBack();
+  };
 
   const renderPagination : React.FC<number> = () => <View />;
 
@@ -61,7 +69,7 @@ const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
   ), [active]);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={[styles.screen, { paddingTop: insets.top }]}>
       <AppIntroSlider
         showNextButton={false}
         showDoneButton={false}
@@ -72,7 +80,7 @@ const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
         onDone={onDone}
         renderItem={renderItem}
       />
-      <View style={styles.content}>
+      <View style={[styles.content, { paddingBottom: insets.bottom }]}>
         <View style={styles.paging}>
           {renderCircle}
         </View>
@@ -82,23 +90,28 @@ const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
         </Text>
         <View style={styles.action}>
           <Button
+            onPress={goBack}
             style={[styles.button, styles.buttonSignUp]}
             labelStyle={styles.buttonSignUpLabel}
             mode="contained"
             uppercase={false}>
             Sign Up
           </Button>
-          <Button style={[styles.button, styles.buttonLogIn]} mode="contained" uppercase={false}>
+          <Button
+            onPress={goBack}
+            style={[styles.button, styles.buttonLogIn]}
+            mode="contained"
+            uppercase={false}>
             Log In
           </Button>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     backgroundColor: '#efefef',
     flex: 1,
   },
@@ -124,7 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   content: {
-    flex: 0.4,
+    height: hp('30%'),
     backgroundColor: '#fff',
     padding: wp('5%'),
   },
