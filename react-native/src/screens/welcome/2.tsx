@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonSignUp: {
-    backgroundColor: '#efefef',
+    backgroundColor: '#dddddd',
     marginRight: 7,
     color: '#000',
   },

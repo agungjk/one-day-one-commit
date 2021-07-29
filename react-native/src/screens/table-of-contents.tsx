@@ -25,22 +25,20 @@ const TableOfContents : React.FC = () => {
       title: 'Welcome Screen',
       data: [
         {
-          name: 'Basic Intro',
-          desc: 'Intro with text and image',
           image: require('../../assets/screenshots/welcome1.png'),
           screen: 'Welcome1',
         },
         {
-          name: 'Auth Slide',
-          desc: 'Intro with SignIn and SignUp',
           image: require('../../assets/screenshots/welcome2.png'),
           screen: 'Welcome2',
         },
         {
-          name: 'Welcome',
-          desc: 'Welcome with SignIn and SignUp',
           image: require('../../assets/screenshots/welcome3.png'),
           screen: 'Welcome3',
+        },
+        {
+          image: require('../../assets/screenshots/welcome4.png'),
+          screen: 'Welcome4',
         },
       ],
     },
@@ -55,8 +53,6 @@ const TableOfContents : React.FC = () => {
       onPress={() => navigate(item.screen)}
       style={styles.itemContainer}>
       <Image source={item.image} style={styles.itemImage} />
-      <Text style={styles.itemName}>{item.name}</Text>
-      <Text style={styles.itemDesc}>{item.desc}</Text>
     </TouchableOpacity>
   );
 
@@ -89,7 +85,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     flex: 1,
-    height: wp('65%'),
+    height: wp('50%'),
     backgroundColor: '#34495e',
   },
   itemImage: {
@@ -99,16 +95,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
-  },
-  itemName: {
-    fontSize: 16,
-    color: '#fff',
-    fontWeight: '600',
-  },
-  itemDesc: {
-    fontWeight: '600',
-    fontSize: 12,
-    color: '#fff',
   },
   sectionHeader: {
     flex: 1,

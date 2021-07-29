@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -20,13 +20,12 @@ const WelcomeScreen : React.FC<ScreenProps> = ({ onDone }) => {
   return (
     <View style={[styles.screen, { marginTop: insets.top, marginBottom: insets.bottom }]}>
       <View style={styles.content}>
-        <Text style={styles.title}>Welcome</Text>
-        <Text style={styles.desc}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ligula ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </Text>
         <View style={styles.imageBox}>
           <Image source={require('../../../assets/no-image.png')} style={styles.image} />
         </View>
+        <Text style={styles.desc}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ligula ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </Text>
         <View style={styles.action}>
           <Button
             onPress={goBack}
@@ -44,6 +43,11 @@ const WelcomeScreen : React.FC<ScreenProps> = ({ onDone }) => {
             Log In
           </Button>
         </View>
+        <TouchableOpacity onPress={goBack}>
+          <Text style={styles.skip}>
+            Skip, use app without account
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -56,8 +60,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   imageBox: {
-    marginHorizontal: wp('3%'),
-    marginBottom: wp('3%'),
     flex: 1,
     borderRadius: 5,
     alignItems: 'center',
@@ -66,44 +68,39 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: 20,
     borderRadius: 5,
-    backgroundColor: '#fff',
   },
   image: {
     width: wp('15%'),
     height: hp('15%'),
   },
-  title: {
-    fontSize: 22,
-    paddingTop: 25,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
   desc: {
-    paddingTop: 10,
+    paddingVertical: 30,
     color: '#9e9da1',
     lineHeight: 20,
     textAlign: 'center',
   },
+  skip: {
+    marginTop: 5,
+    color: '#393847',
+    lineHeight: 20,
+    textAlign: 'center',
+  },
   action: {
-    flexDirection: 'row',
-    marginTop: 25,
+    flex: 0.3,
   },
   button: {
-    flex: 1,
     padding: 10,
   },
   buttonSignUp: {
     backgroundColor: '#dddddd',
-    marginRight: 7,
+    marginBottom: 15,
     color: '#000',
   },
   buttonSignUpLabel: {
     color: '#393847',
   },
   buttonLogIn: {
-    marginLeft: 7,
     backgroundColor: '#393847',
   },
 });

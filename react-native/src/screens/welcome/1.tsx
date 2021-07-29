@@ -14,21 +14,21 @@ const slides = [
     title: 'Title 1',
     text: 'Description.\nSay something cool',
     image: require('../../../assets/no-image.png'),
-    backgroundColor: '#59b2ab',
+    backgroundColor: 'grey',
   },
   {
     key: 'two',
     title: 'Title 2',
     text: 'Other cool stuff',
     image: require('../../../assets/no-image.png'),
-    backgroundColor: '#febe29',
+    backgroundColor: 'grey',
   },
   {
     key: 'three',
     title: 'Rocket guy',
     text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
     image: require('../../../assets/no-image.png'),
-    backgroundColor: '#22bcb5',
+    backgroundColor: 'grey',
   }
 ];
 
