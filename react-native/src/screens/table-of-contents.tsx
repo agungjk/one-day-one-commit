@@ -8,8 +8,6 @@ interface ItemProps {
   item: {
     screen: String;
     image: any;
-    name: String;
-    desc: String;
   }
 };
 
@@ -40,6 +38,10 @@ const TableOfContents : React.FC = () => {
           image: require('../../assets/screenshots/welcome4.png'),
           screen: 'Welcome4',
         },
+        {
+          image: require('../../assets/screenshots/welcome5.png'),
+          screen: 'Welcome5',
+        },
       ],
     },
   ]);
@@ -65,7 +67,7 @@ const TableOfContents : React.FC = () => {
       <SectionGrid
         itemDimension={wp('45%')}
         sections={items}
-        style={styles.gridView}
+        style={styles.grid}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
       />
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
-  gridView: {
+  grid: {
     flex: 1,
   },
   itemContainer: {

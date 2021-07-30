@@ -10,6 +10,7 @@ import Welcome1Screen from './src/screens/welcome/1';
 import Welcome2Screen from './src/screens/welcome/2';
 import Welcome3Screen from './src/screens/welcome/3';
 import Welcome4Screen from './src/screens/welcome/4';
+import Welcome5Screen from './src/screens/welcome/5';
 import TOCScreen from './src/screens/table-of-contents';
 
 const Stack = createStackNavigator();
@@ -37,6 +38,7 @@ export default function App() {
             <Stack.Screen name="Welcome2" component={Welcome2Screen} />
             <Stack.Screen name="Welcome3" component={Welcome3Screen} />
             <Stack.Screen name="Welcome4" component={Welcome4Screen} />
+            <Stack.Screen name="Welcome5" component={Welcome5Screen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
