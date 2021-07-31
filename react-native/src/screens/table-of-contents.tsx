@@ -31,7 +31,7 @@ const TableOfContents : React.FC = () => {
           screen: 'Welcome6',
         },
         {
-          image: require('../../assets/screenshots/welcome6.png'),
+          image: require('../../assets/screenshots/welcome7.png'),
           screen: 'Welcome7',
         },
         {
