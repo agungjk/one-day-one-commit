@@ -17,16 +17,19 @@ interface RenderItemProps {
 const slides = [
   {
     key: 'one',
+    title: 'How to Get Started 1',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ligula ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
     image: require('../../../assets/no-image.png'),
   },
   {
     key: 'two',
+    title: 'How to Get Started 2',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ligula ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
     image: require('../../../assets/no-image.png'),
   },
   {
     key: 'three',
+    title: 'How to Get Started 3',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ligula ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
     image: require('../../../assets/no-image.png'),
   }
@@ -53,6 +56,7 @@ const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
         <View style={styles.imageBox}>
           <Image source={item.image} style={styles.image} />
         </View>
+        <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.desc}>{item.desc}</Text>
       </View>
     );
@@ -84,18 +88,10 @@ const IntroScreen : React.FC<ScreenProps> = ({ onDone }) => {
         <View style={styles.action}>
           <Button
             onPress={goBack}
-            style={[styles.button, styles.buttonSignUp]}
-            labelStyle={styles.buttonSignUpLabel}
+            style={styles.button}
             mode="contained"
             uppercase={false}>
-            Sign Up
-          </Button>
-          <Button
-            onPress={goBack}
-            style={[styles.button, styles.buttonLogIn]}
-            mode="contained"
-            uppercase={false}>
-            Log In
+            Get Started
           </Button>
         </View>
       </View>
@@ -142,6 +138,12 @@ const styles = StyleSheet.create({
     width: wp('15%'),
     height: hp('15%'),
   },
+  title: {
+    fontSize: 22,
+    paddingTop: 25,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
   desc: {
     paddingTop: 10,
     color: '#9e9da1',
@@ -155,16 +157,6 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     padding: 10,
-  },
-  buttonSignUp: {
-    backgroundColor: '#dddddd',
-    marginRight: 7,
-    color: '#000',
-  },
-  buttonSignUpLabel: {
-    color: '#393847',
-  },
-  buttonLogIn: {
     marginLeft: 7,
     backgroundColor: '#393847',
   },
