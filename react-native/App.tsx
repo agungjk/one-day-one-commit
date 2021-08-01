@@ -13,19 +13,25 @@ import Welcome4Screen from './src/screens/welcome/4';
 import Welcome5Screen from './src/screens/welcome/5';
 import Welcome6Screen from './src/screens/welcome/6';
 import Welcome7Screen from './src/screens/welcome/7';
+import Auth1Screen from './src/screens/auth/1';
 import TOCScreen from './src/screens/table-of-contents';
 
 const Stack = createStackNavigator();
 
-function CustomNavigationBar() {
+const CustomNavigationBar = ({ navigation, previous, scene }) => {
+  const title = scene?.descriptor?.options?.title
+    ? scene?.descriptor?.options?.title
+    : 'Wireframe';
+ 
   return (
-    <Appbar.Header>
-      <Appbar.Content title="My awesome app" />
+    <Appbar.Header style={{ backgroundColor: '#fff', elevation: 1 }}>
+      {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
+      <Appbar.Content title={title} />
     </Appbar.Header>
   );
 }
 
-const hideHeader = { headerShown: false };
+const hideHeader = { headerShown: false, header: props => <CustomNavigationBar {...props} />,};
 
 export default function App() {
   return (
@@ -43,6 +49,7 @@ export default function App() {
             <Stack.Screen name="Welcome5" component={Welcome5Screen} />
             <Stack.Screen name="Welcome6" component={Welcome6Screen} />
             <Stack.Screen name="Welcome7" component={Welcome7Screen} />
+            <Stack.Screen name="Auth1" component={Auth1Screen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

@@ -52,6 +52,15 @@ const TableOfContents : React.FC = () => {
         },
       ],
     },
+    {
+      title: 'Auth Screen',
+      data: [
+        {
+          image: require('../../assets/screenshots/auth1.png'),
+          screen: 'Auth1',
+        },
+      ]
+    },
   ]);
 
   const navigate = (screen: any) => {
