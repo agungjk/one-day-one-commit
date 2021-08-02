@@ -56,8 +56,12 @@ const TableOfContents : React.FC = () => {
       title: 'Auth Screen',
       data: [
         {
-          image: require('../../assets/screenshots/auth1.png'),
-          screen: 'Auth1',
+          image: require('../../assets/screenshots/login1.png'),
+          screen: 'AuthLogin1',
+        },
+        {
+          image: require('../../assets/screenshots/register1.png'),
+          screen: 'AuthRegister1',
         },
       ]
     },

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, TextInput } from 'react-native-paper';
+import { Button, TextInput, Snackbar } from 'react-native-paper';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { useNavigation } from '@react-navigation/native';
 
@@ -14,7 +14,7 @@ const Screen : React.FC<ScreenProps> = ({ onDone }) => {
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
-      title: 'Welcome Back'
+      title: 'Create Account'
     })
   }, []);
 
@@ -29,6 +29,12 @@ const Screen : React.FC<ScreenProps> = ({ onDone }) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ligula ante. 
         </Text>
         <View style={styles.action}>
+          <TextInput
+            label="Name"
+            mode="outlined"
+            outlineColor="#fff"
+            style={styles.input}
+          />
           <TextInput
             label="Email"
             mode="outlined"
@@ -46,13 +52,24 @@ const Screen : React.FC<ScreenProps> = ({ onDone }) => {
             style={styles.button}
             mode="contained"
             uppercase={false}>
-            Log In
+            Sign Up
           </Button>
         </View>
         <Text style={styles.link}>
-          Forgot your password ?
+          Have an account? Sign in here
         </Text>
       </View>
+
+      <Snackbar
+        visible
+        style={styles.error}
+        action={{
+          label: 'close',
+          onPress: () => {},
+        }}
+        onDismiss={() => {}}>
+        Register failed, please try again at the moment.
+      </Snackbar>
     </View>
   );
 }
@@ -88,6 +105,9 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#393847',
   },
+  error: {
+    backgroundColor: '#c0392b'
+  }
 });
 
 export default Screen;
