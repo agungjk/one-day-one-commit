@@ -13,7 +13,7 @@ const Screen : React.FC<ScreenProps> = ({ onDone }) => {
 
   useEffect(() => {
     navigation.setOptions({
-      title: 'Welcome Back'
+      title: 'Forgot Password'
     })
   }, []);
 
@@ -34,34 +34,25 @@ const Screen : React.FC<ScreenProps> = ({ onDone }) => {
             outlineColor="#fff"
             style={styles.input}
           />
-          <TextInput
-            label="Password"
-            mode="outlined"
-            outlineColor="#fff"
-            style={styles.input}
-          />
           <Button
             onPress={goBack}
             style={styles.button}
             mode="contained"
             uppercase={false}>
-            Log In
+            Reset Password
           </Button>
         </View>
-        <Text style={styles.link}>
-          Forgot your password ?
-        </Text>
       </View>
 
       <Snackbar
         visible
-        style={styles.error}
+        style={styles.success}
         action={{
           label: 'close',
           onPress: () => {},
         }}
         onDismiss={() => {}}>
-        Login failed, please check your login info.
+        Please check your email for further instruction.
       </Snackbar>
     </View>
   );
@@ -80,12 +71,6 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     textAlign: 'center',
   },
-  link: {
-    paddingTop: hp('5%'),
-    color: '#393847',
-    lineHeight: 20,
-    textAlign: 'center',
-  },
   action: {
     marginTop: 15,
   },
@@ -98,8 +83,8 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#393847',
   },
-  error: {
-    backgroundColor: '#c0392b'
+  success: {
+    backgroundColor: '#16a085'
   }
 });
 

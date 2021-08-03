@@ -13,7 +13,6 @@ const Screen : React.FC<ScreenProps> = ({ onDone }) => {
 
   useEffect(() => {
     navigation.setOptions({
-      headerShown: true,
       title: 'Create Account'
     })
   }, []);

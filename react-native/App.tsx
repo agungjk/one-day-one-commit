@@ -15,6 +15,7 @@ import Welcome6Screen from './src/screens/welcome/6';
 import Welcome7Screen from './src/screens/welcome/7';
 import AuthLogin1Screen from './src/screens/auth/login1';
 import AuthRegister1Screen from './src/screens/auth/register1';
+import AuthReset1Screen from './src/screens/auth/reset1';
 import TOCScreen from './src/screens/table-of-contents';
 
 const Stack = createStackNavigator();
@@ -28,7 +29,7 @@ interface NavigationProps {
 const CustomNavigationBar = ({ navigation, previous, scene } : NavigationProps) => {
   const title = scene?.descriptor?.options?.title
     ? scene?.descriptor?.options?.title
-    : 'Wireframe';
+    : 'React Native Wireframe';
  
   return (
     <Appbar.Header style={{ backgroundColor: '#fff', elevation: 1 }}>
@@ -39,7 +40,6 @@ const CustomNavigationBar = ({ navigation, previous, scene } : NavigationProps) 
 }
 
 const hideHeader = {
-  headerShown: false,
   header: (props: any) => <CustomNavigationBar {...props} />,
 };
 
@@ -61,6 +61,7 @@ export default function App() {
             <Stack.Screen name="Welcome7" component={Welcome7Screen} />
             <Stack.Screen name="AuthLogin1" component={AuthLogin1Screen} />
             <Stack.Screen name="AuthRegister1" component={AuthRegister1Screen} />
+            <Stack.Screen name="AuthReset1" component={AuthReset1Screen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

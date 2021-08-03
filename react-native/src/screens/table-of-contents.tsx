@@ -63,6 +63,10 @@ const TableOfContents : React.FC = () => {
           image: require('../../assets/screenshots/register1.png'),
           screen: 'AuthRegister1',
         },
+        {
+          image: require('../../assets/screenshots/reset1.png'),
+          screen: 'AuthReset1',
+        },
       ]
     },
   ]);
