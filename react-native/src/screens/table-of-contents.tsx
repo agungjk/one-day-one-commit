@@ -69,6 +69,15 @@ const TableOfContents : React.FC = () => {
         },
       ]
     },
+    {
+      title: 'Content Screen',
+      data: [
+        {
+          image: require('../../assets/screenshots/home1.png'),
+          screen: 'ContentHome1',
+        },
+      ]
+    },
   ]);
 
   const navigate = (screen: any) => {
