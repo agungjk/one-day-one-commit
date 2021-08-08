@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import { Title } from 'react-native-paper';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { useNavigation } from '@react-navigation/native';
-import { FlatList } from 'react-native-gesture-handler';
 
 const data = [...Array(6).keys()];
 

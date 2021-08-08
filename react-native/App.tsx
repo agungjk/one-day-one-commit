@@ -18,6 +18,7 @@ import AuthRegister1Screen from './src/screens/auth/register1';
 import AuthReset1Screen from './src/screens/auth/reset1';
 import ContentHome1Screen from './src/screens/content/home1';
 import ContentProducts1Screen from './src/screens/content/products1';
+import ContentDetail1Screen from './src/screens/content/detail1';
 import TOCScreen from './src/screens/table-of-contents';
 
 const Stack = createStackNavigator();
@@ -50,7 +51,16 @@ const CustomNavigationBar = ({ navigation, previous, scene } : NavigationProps) 
             <Appbar.Action icon="cart" onPress={() => {}} />          
           </>
         );
-    }
+
+        case 'ContentDetail1':
+          return (
+            <>
+              <Appbar.Action icon="magnify" onPress={() => {}} />
+              <Appbar.Action icon="cart" onPress={() => {}} />          
+            </>
+          );
+  
+      }
   }
  
   return (
@@ -87,6 +97,7 @@ export default function App() {
             <Stack.Screen name="AuthReset1" component={AuthReset1Screen} />
             <Stack.Screen name="ContentHome1" component={ContentHome1Screen} />
             <Stack.Screen name="ContentProducts1" component={ContentProducts1Screen} />
+            <Stack.Screen name="ContentDetail1" component={ContentDetail1Screen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
