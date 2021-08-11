@@ -20,7 +20,7 @@ I will start with React Native
 |  |  |
 | ![Home1](/react-native/assets/screenshots/home1.png) | ![Products1](/react-native/assets/screenshots/products1.png) |
 |  |  |
-| ![Detail1](/react-native/assets/screenshots/detail1.png) |  |
+| ![Detail1](/react-native/assets/screenshots/detail1.png) | ![Detail2](/react-native/assets/screenshots/detail2.png) |
 |  |  |
 
 

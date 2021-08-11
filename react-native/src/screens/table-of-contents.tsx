@@ -84,6 +84,10 @@ const TableOfContents : React.FC = () => {
           image: require('../../assets/screenshots/detail1.png'),
           screen: 'ContentDetail1',
         },
+        {
+          image: require('../../assets/screenshots/detail2.png'),
+          screen: 'ContentDetail2',
+        },
       ]
     },
   ]);
