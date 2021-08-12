@@ -14,8 +14,6 @@ const flatListOptimizationProps = {
 };
 
 const slides = new Array(5).fill('').map((dt, index) => ({ id: index + 1 }));
-console.log('slides', slides);
-
 
 const Screen = () => {
   const navigation = useNavigation();
