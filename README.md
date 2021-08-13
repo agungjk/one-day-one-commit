@@ -22,7 +22,7 @@ I will start with React Native
 |  |  |
 | ![Detail1](/react-native/assets/screenshots/detail1.png) | ![Detail2](/react-native/assets/screenshots/detail2.png) |
 |  |  |
-| ![Cart1](/react-native/assets/screenshots/cart1.png) |  |
+| ![Cart1](/react-native/assets/screenshots/cart1.png) | ![Cart1](/react-native/assets/screenshots/cart2.png) |
 |  |  |
 
 

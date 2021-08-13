@@ -52,6 +52,7 @@ const Screen = () => {
         <FlatList
           data={slides}
           renderItem={renderItem}
+          keyExtractor={(_, index) => index.toString()}
         />        
       </View>
       <View style={styles.action}>

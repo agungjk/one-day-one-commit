@@ -21,6 +21,7 @@ import ContentProducts1Screen from './src/screens/content/products1';
 import ContentDetail1Screen from './src/screens/content/detail1';
 import ContentDetail2Screen from './src/screens/content/detail2';
 import ContentCart1Screen from './src/screens/content/cart1';
+import ContentCart2Screen from './src/screens/content/cart2';
 import TOCScreen from './src/screens/table-of-contents';
 
 const Stack = createStackNavigator();
@@ -38,11 +39,12 @@ const CustomNavigationBar = ({ navigation, previous, scene } : NavigationProps) 
 
   const renderRightAction = () => {
     const isMagnifyEnable = [
-      'ContentCart1',
       'ContentHome1',
       'ContentProducts1',
       'ContentDetail1',
       'ContentDetail2',
+      'ContentCart1',
+      'ContentCart2',
     ].includes(scene.route.key);
     const isPlusEnable = [ 'ContentHome1' ].includes(scene.route.key);
     const isCartEnable = [
@@ -50,6 +52,7 @@ const CustomNavigationBar = ({ navigation, previous, scene } : NavigationProps) 
       'ContentDetail1',
       'ContentDetail2',
       'ContentCart1',
+      'ContentCart2',
     ].includes(scene.route.key);
 
     return (
@@ -98,6 +101,7 @@ export default function App() {
             <Stack.Screen name="ContentDetail1" component={ContentDetail1Screen} />
             <Stack.Screen name="ContentDetail2" component={ContentDetail2Screen} />
             <Stack.Screen name="ContentCart1" component={ContentCart1Screen} />
+            <Stack.Screen name="ContentCart2" component={ContentCart2Screen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
