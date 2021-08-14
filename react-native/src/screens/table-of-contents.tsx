@@ -23,8 +23,8 @@ const TableOfContents : React.FC = () => {
       title: 'Welcome Screen',
       data: [
         {
-          image: require('../../assets/screenshots/welcome1.png'),
-          screen: 'Welcome1',
+          image: require('../../assets/screenshots/welcome.png'),
+          screen: 'Welcome',
         },
         {
           image: require('../../assets/screenshots/welcome6.png'),
@@ -56,16 +56,16 @@ const TableOfContents : React.FC = () => {
       title: 'Auth Screen',
       data: [
         {
-          image: require('../../assets/screenshots/login1.png'),
-          screen: 'AuthLogin1',
+          image: require('../../assets/screenshots/login.png'),
+          screen: 'AuthLogin',
         },
         {
-          image: require('../../assets/screenshots/register1.png'),
-          screen: 'AuthRegister1',
+          image: require('../../assets/screenshots/register.png'),
+          screen: 'AuthRegister',
         },
         {
-          image: require('../../assets/screenshots/reset1.png'),
-          screen: 'AuthReset1',
+          image: require('../../assets/screenshots/reset.png'),
+          screen: 'AuthReset',
         },
       ]
     },
@@ -73,28 +73,32 @@ const TableOfContents : React.FC = () => {
       title: 'Content Screen',
       data: [
         {
-          image: require('../../assets/screenshots/home1.png'),
-          screen: 'ContentHome1',
+          image: require('../../assets/screenshots/home.png'),
+          screen: 'ContentHome',
         },
         {
-          image: require('../../assets/screenshots/products1.png'),
-          screen: 'ContentProducts1',
+          image: require('../../assets/screenshots/products.png'),
+          screen: 'ContentProducts',
         },
         {
-          image: require('../../assets/screenshots/detail1.png'),
-          screen: 'ContentDetail1',
+          image: require('../../assets/screenshots/detail.png'),
+          screen: 'ContentDetail',
         },
         {
           image: require('../../assets/screenshots/detail2.png'),
           screen: 'ContentDetail2',
         },
         {
-          image: require('../../assets/screenshots/cart1.png'),
-          screen: 'ContentCart1',
+          image: require('../../assets/screenshots/cart.png'),
+          screen: 'ContentCart',
         },
         {
           image: require('../../assets/screenshots/cart2.png'),
           screen: 'ContentCart2',
+        },
+        {
+          image: require('../../assets/screenshots/confirmation.png'),
+          screen: 'ContentConfirmation',
         },
       ]
     },
